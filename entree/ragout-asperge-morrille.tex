@@ -1,0 +1,133 @@
+\documentclass[a4paper, 12pt]{article}
+
+% encoding, font, language
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{lmodern}
+\usepackage[ngerman, english, french]{babel}
+
+\usepackage{nicefrac}
+
+\usepackage[
+    handwritten,
+    nowarnings,
+]{xcookybooky}
+
+%\usepackage{blindtext}    % only needed for generating test text
+
+\DeclareRobustCommand{\textcelcius}{\ensuremath{^{\circ}\mathrm{C}}}
+
+
+\setcounter{secnumdepth}{1}
+\renewcommand*{\recipesection}[2][]
+{%
+    \subsection[#1]{#2}
+}
+\renewcommand{\subsectionmark}[1]
+{% no implementation to display the section name instead
+}
+
+
+\usepackage{hyperref}    % must be the last package
+\hypersetup{%
+    pdfauthor            = {Pierr Fierz},
+    pdftitle             = {Une recette de Pierre},
+    pdfsubject           = {Recette de cuisine},
+    pdfkeywords          = {recette, xcookybooky},
+    pdfstartview         = {FitV},
+    pdfview              = {FitH},
+    pdfpagemode          = {UseNone}, % Options; UseNone, UseOutlines
+    bookmarksopen        = {true},
+    pdfpagetransition    = {Glitter},
+    colorlinks           = {true},
+    linkcolor            = {black},
+    urlcolor             = {blue},
+    citecolor            = {black},
+    filecolor            = {black},
+}
+
+\hbadness=10000	% Ignore underfull boxes
+\setlength{\headheight}{20pt}
+
+\begin{document}
+
+\begin{otherlanguage}{french}
+
+\setHeadlines
+{% translation
+    inghead = Ingrédients,
+    prephead = Préparation,
+    hinthead = conseil,
+    continuationhead = ,
+    continuationfoot = ,
+    portionvalue = personnes
+}
+
+ 
+\begin{recipe}
+[ % Optionale Eingaben
+    preparationtime = {\unit[1]{h}},
+    portion = \portion{6-8},
+    %source = R. Gaus
+]
+{Ragoût d'asperges et morilles}
+    
+    \graph
+        {% Bilder
+          small=ragout-asperge, % großes (längeres) Bild
+          big=ragout-asperge-ingredients , % kleines Bil
+        }
+    
+    \ingredients
+        {% Zutaten
+         \unit[800]{g} & d'asperges blanche trés fraiche\\
+         \unit[200]{g} & de morilles fraiches\\
+         2 & échalottes moyennes\\
+         \unit[1]{dl} & de vin blanc sec\\
+         \unit[1]{dl} & de fond de veau\\
+         \unit[1]{dl} & de crème liquide\\
+         \unit[7]{cl} & de vin jaune (du Jura)\\
+         \unit[20]{g} & de beurre mannié\\ \\
+                      & persil plat, thym \\
+                      & sel, poivre, piment d'espelette \\      
+      }
+    
+    \preparation { % Zubereitung
+      \step Pour le beurre manié prendre \unit[15]{gr} de beurre coupé en petits morceaux. Saupoudrer de \unit[15]{gr} de
+            farine et triturer avec une fourchette afin d'obtenir une pâte homogène.
+      \step Couper le bout des asperges, les éplucher et les nouer en deux bottes de grandeur égale (voire la photo)
+            Cela permet une cuisson uniforme des asperges.
+      \step Dans une grande casserole faire chauffer \unit[3]{l} d'eau avec \unit[30]{gr} de sel.
+      \step Quand l'eau bout y plonger les asperges et laisser cuire à gros bouillons durant cinq minutes. 
+            Retirer la casserole du feu et la couvrir. Après 5 à 10 minutes les asperge descende au fond de la
+            casserole elles sont cuites à point. Les laisser refroidir sur du papier absorbant. Quand les asperges sont froides
+            les couper en tronçon de 1 centimètre.
+      \step Ciseler finement les échalotes. Laver bien les morilles et les couper en rondelles d'un demi-centimètre.
+      \step Faire chauffer un filet d'huile d'olive dans une poêle et y ajouter les échalotes. Saler et laisser revenir
+            2 minutes. Ajouter ensuite les rondelles de morilles et laisser revenir 2 à 3 minutes.
+      \step Ajouter alors le vin et le fonds de veau et laisser réduire à petit feu durant cinq minutes.
+      \step Ajouter alors la crème et laisser mijoter durant cinq autres minutes.
+      \step Incorporer le beurre manié puis tout à la fin le vin jaune. Ne plus faire cuire.
+      \step Parsemer le plat de persil et de thym ciselé. Servir aussitôt.
+      
+    }
+    
+    \suggestion[Variantes] {
+      \begin{itemize}
+       \item Si l'on ne trouve pas de morilles fraiches prendre \unit[20]{gr} de morilles séchées.
+       \item Si l'on n'a pas de vin jaune on peut utiliser du Xeres sec. Ce sera aussi moins cher.
+      \end{itemize}
+    }
+    
+    \hint {% Tipp
+	 Les asperges sont fraiches, si elle grince lorsqu'on les frotte les une aux autres.
+    }
+
+\end{recipe}
+
+\end{otherlanguage}
+
+
+\end{document} 
