@@ -1,0 +1,117 @@
+\documentclass[a4paper, 12pt]{article}
+
+% encoding, font, language
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{lmodern}
+\usepackage[ngerman, english, french]{babel}
+
+\usepackage{nicefrac}
+
+\usepackage[
+    handwritten,
+    nowarnings,
+]{xcookybooky}
+
+%\usepackage{blindtext}    % only needed for generating test text
+
+\DeclareRobustCommand{\textcelcius}{\ensuremath{^{\circ}\mathrm{C}}}
+
+
+\setcounter{secnumdepth}{1}
+\renewcommand*{\recipesection}[2][]
+{%
+    \subsection[#1]{#2}
+}
+\renewcommand{\subsectionmark}[1]
+{% no implementation to display the section name instead
+}
+
+
+\usepackage{hyperref}    % must be the last package
+\hypersetup{%
+    pdfauthor            = {Pierr Fierz},
+    pdftitle             = {Une recette de Pierre},
+    pdfsubject           = {Recette de cuisine},
+    pdfkeywords          = {recette, xcookybooky},
+    pdfstartview         = {FitV},
+    pdfview              = {FitH},
+    pdfpagemode          = {UseNone}, % Options; UseNone, UseOutlines
+    bookmarksopen        = {true},
+    pdfpagetransition    = {Glitter},
+    colorlinks           = {true},
+    linkcolor            = {black},
+    urlcolor             = {blue},
+    citecolor            = {black},
+    filecolor            = {black},
+}
+
+\hbadness=10000	% Ignore underfull boxes
+\setlength{\headheight}{20pt}
+
+\begin{document}
+
+%\include{tex/soupe_petit_pois}
+\begin{otherlanguage}{french}
+
+\setHeadlines
+{% translation
+    inghead = Ingrédients,
+    prephead = Préparation,
+    hinthead = conseil,
+    continuationhead = suite,
+    continuationfoot = suite à la page suivante,
+    portionvalue = personnes
+}
+
+ 
+\begin{recipe}
+[ % Optionale Eingaben
+    preparationtime = {\unit[1]{h}},
+    portion = \portion{4},
+    %source = R. Gaus
+]
+{Crème froide de petits pois à la menthe}
+    
+    \graph
+        {% Bilder
+          small=creme-pois, % großes (längeres) Bild
+          big=creme-pois-ingredients , % kleines Bil
+        }
+    
+    \ingredients
+        {% Zutaten
+         \unit[300]{g} & de petits pois frais écossés\\
+         \unit[5]{dl} & de bouillon de volaille froid\\
+          \unit[1]{dl} & d'huile d'olive \\
+          \unit[5]{cl} & de crème liquide \\
+          30-50 & feuilles de menthe poivrée \\
+          & sel, poivre \\
+    }
+    
+    \preparation
+        { % Zubereitung
+      %\step Ecosser les petits pois. 
+      \step Porter 2 litre d'eau à ébullition avec 20g de sel.
+      \step Ajouter les petits pois frais, et compter 3 minutes de cuisson
+      \step Rafraichir les petits pois dans de l'eau bien froide (avec des cube de glace). Dés qu'il sont bien froids, les égouter.
+      \step Mettre les petits pois dans le bol d'un mixeur. Ajouter 30-50 feuilles de menthe (selon votre goût) puis mixer. 
+      Verser ensuite \unit[1]{dl} d'huile d'olive, saler, poivrer, ajouter \unit[5]{cl} de créme liquide et mixer.
+      \step Passer la crème dans un chinois ou une passoire très fine, puis la reserver au réfrigerateur.
+      \step Servir la crème bien froide dans des assiettes individuelles, garnir avec 2 à 3 feuilles de menthe et d'un filet 
+      d'huile d'olive.
+    }
+    
+    \hint
+    {% Tipp
+        \unit[1]{kg} de petits pois frais donnent environs \unit[300]{g} de petits pois écossés.
+    }
+
+\end{recipe}
+
+\end{otherlanguage}
+
+
+\end{document} 
