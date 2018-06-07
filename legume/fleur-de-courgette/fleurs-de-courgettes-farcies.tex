@@ -1,0 +1,132 @@
+\documentclass[a4paper, 12pt]{article}
+
+% encoding, font, language
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{lmodern}
+\usepackage[ngerman, english, french]{babel}
+
+\usepackage{nicefrac}
+
+\usepackage[
+    handwritten,
+    nowarnings,
+]{xcookybooky}
+
+%\usepackage{blindtext}    % only needed for generating test text
+
+\DeclareRobustCommand{\textcelcius}{\ensuremath{^{\circ}\mathrm{C}}}
+
+
+\setcounter{secnumdepth}{1}
+\renewcommand*{\recipesection}[2][]
+{%
+    \subsection[#1]{#2}
+}
+\renewcommand{\subsectionmark}[1]
+{% no implementation to display the section name instead
+}
+
+
+\usepackage{hyperref}    % must be the last package
+\hypersetup{%
+    pdfauthor            = {Pierr Fierz},
+    pdftitle             = {Une recette de Pierre},
+    pdfsubject           = {Recette de cuisine},
+    pdfkeywords          = {recette, xcookybooky},
+    pdfstartview         = {FitV},
+    pdfview              = {FitH},
+    pdfpagemode          = {UseNone}, % Options; UseNone, UseOutlines
+    bookmarksopen        = {true},
+    pdfpagetransition    = {Glitter},
+    colorlinks           = {true},
+    linkcolor            = {black},
+    urlcolor             = {blue},
+    citecolor            = {black},
+    filecolor            = {black},
+}
+
+\hbadness=10000	% Ignore underfull boxes
+\setlength{\headheight}{20pt}
+
+\begin{document}
+
+\begin{otherlanguage}{french}
+
+\setHeadlines
+{% translation
+    inghead = Ingrédients,
+    prephead = Préparation,
+    hinthead = conseil,
+    continuationhead = ,
+    continuationfoot = ,
+    portionvalue = personnes
+}
+
+
+\begin{recipe}
+[ % Optionale Eingaben
+    preparationtime = {\unit[45]{m}},
+    portion = \portion{4},
+    bakingtime={\unit[15]{m}},
+    bakingtemperature={\protect\bakingtemperature{
+        topbottomheat=\unit[180]{\textcelcius}}},
+    %source = R. Gaus
+]
+{Fleurs de courgettes farcies}
+    
+    \graph
+        {% Bilder
+          small=fleur-de-courgette, % großes (längeres) Bild
+          big=fleur-de-courgette-ingredients , % kleines Bil
+        }
+    
+    \ingredients
+        {% Zutaten
+         12 & fleurs de courgettes femelles (avec la petite courgette) \\
+         \unit[100]{g} & de fromage de chèvre frai\\
+         \unit[50]{g} & de mascarpone\\
+         1 & grosse échalotes\\
+         3 & cuillères à soupe d'herbes ciselé (persil plat, basilic, ...)\\
+         \unit[1] & cuillères à café de piment d'Espelette\\
+                  & huile d'olive\\
+                  & beurre\\
+                  & sel et poivre    
+      }
+    
+    \preparation { % Zubereitung
+      \step Dans une poêle faire revenir dans du beurre l'échalote finement ciselée durant 2 à 3 minutes. Saler.
+      \step Mettre le fromage de chèvre dans un récipient et l'écraser à l'aide d'une fourchette.
+      \step Ajouter le mascarpone et bien mélanger toujours à l'aide de la fourchette.
+      \step Incorporer ensuite les échalotes, les herbes et le piment d'Espelette. Vérifier l'assaisonnement.
+            Voilà la farce et prête.
+      \step Frotter les petites courgettes avec un papier pour enlever les petits poils et couper le pédoncule. Ouvrir 
+            délicatement la fleur et retirer le pistil.
+      \step Avec une petite cuillère (ou une poche à douille) farcir les fleurs avec la préparation de fromage de chèvre.
+            Bien refermer les pétales de la fleur.
+      \step Badigeonner un plat allant au four avec de l'huile d'olive et y déposer les fleurs.
+      \step Arroser les fleurs avec un filet d'huile d'olive et enfourner à \unit[180]{\textcelcius} durant \unit[15]{m} environ.  
+    }
+    
+    \suggestion[Variantes] {
+      Si l'on n'aime pas le fromage de chèvre, on peut le remplacer par de la ricotta
+    }
+    
+    \hint {% Tipp
+      \begin{itemize}
+       \item Les fleurs de courgettes peuvent être utilisées pour une assiette de légumes (voir la photo) ou servie avec une viande
+             ou une volaille.
+       \item S'il reste de la farce, on peut l'utiliser pour confectionner des canapés. C'est succulent!
+      \end{itemize}
+
+      
+    }
+
+\end{recipe}
+
+\end{otherlanguage}
+
+
+\end{document} 
